@@ -1,0 +1,1564 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f0f4ff;
+    color: #222;
+}
+
+header {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+header h1 {
+    margin-bottom: 10px;
+}
+
+.hero {
+    text-align: center;
+    padding: 60px 20px;
+    background: #dbeafe;
+}
+
+.hero h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #1e40af;
+}
+
+.career-box {
+    background: white;
+    max-width: 500px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000015;
+    text-align: center;
+}
+
+.career-box h2 {
+    margin-bottom: 20px;
+}
+
+input {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 7px;
+}
+
+#result {
+    margin-top: 20px;
+    line-height: 1.6;
+}
+
+footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.skills-section {
+    max-width: 650px;
+    margin: 40px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px #00000015;
+}
+
+.skills-section h2 {
+    color: #172554;
+    margin-bottom: 12px;
+}
+
+.skill-options {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 25px 0;
+    text-align: left;
+}
+
+.skill-options label {
+    background: #eff6ff;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.skill-options input {
+    width: auto;
+    margin-right: 8px;
+}
+
+#skillResult {
+    margin-top: 20px;
+    color: #172554;
+    line-height: 1.8;
+}
+
+@media (max-width: 500px) {
+    .skill-options {
+        grid-template-columns: 1fr;
+    }
+}
+
+.chatbot {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px #00000020;
+}
+
+.chatbot h2 {
+    color: #172554;
+    margin-bottom: 10px;
+}
+
+#chatMessages {
+    height: 300px;
+    overflow-y: auto;
+    background: #f1f5f9;
+    padding: 15px;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.bot-message,
+.user-message {
+    padding: 12px;
+    margin-bottom: 12px;
+    border-radius: 10px;
+    max-width: 85%;
+    overflow-wrap: anywhere;
+}
+
+.bot-message {
+    background: #dbeafe;
+    color: #172554;
+}
+
+.user-message {
+    background: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.chat-input {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input input {
+    flex: 1;
+    min-width: 0;
+}
+
+.chat-input button {
+    margin-top: 10px;
+}
+
+.clear-btn {
+    background: #dc2626;
+    color: white;
+    padding: 9px 16px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    margin: 12px 0;
+}
+
+.clear-btn:hover {
+    background: #991b1b;
+}
+
+.mic-btn {
+    background: #7c3aed;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 15px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.mic-btn:hover {
+    background: #5b21b6;
+}
+
+.voice-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.voice-controls label {
+    color: #172554;
+    font-size: 14px;
+}
+
+.voice-controls input {
+    width: auto;
+}
+
+.mic-btn {
+    background: #7c3aed;
+    color: white;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#micButton {
+    background: #7c3aed;
+}
+
+#micButton:hover {
+    background: #5b21b6;
+}
+
+#micButton.listening {
+    background: #dc2626;
+    animation: pulse 1s infinite;
+}
+
+.stop-btn {
+    background: #dc2626;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+@keyframes pulse {
+    50% {
+        opacity: 0.5;
+    }
+}
+
+@media(max-width: 500px) {
+    .chat-input {
+        flex-wrap: wrap;
+    }
+
+    .chat-input input {
+        width: 100%;
+    }
+}
+#clearChatBtn {
+    background: #e74c3c;
+    color: white;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+#clearChatBtn:hover {
+    background: #c0392b;
+}
+.chat-input {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.chat-input button {
+    background: #008b8b;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+/* Dark Mode */
+
+body.dark-mode {
+    background: #121212;
+    color: white;
+}
+
+.dark-mode .chatbot {
+    background: #222;
+    color: white;
+}
+
+.dark-mode .bot-message {
+    background: #333;
+    color: white;
+}
+
+.dark-mode .user-message {
+    background: #006666;
+    color: white;
+}
+
+#themeBtn {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #008b8b;
+    color: white;
+}
+
+/* Career Recommendation Section */
+
+.career-section {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    color: #222;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.career-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.career-section p {
+    margin-bottom: 25px;
+}
+
+.career-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.career-form label {
+    font-weight: bold;
+}
+
+.career-form input,
+.career-form select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.career-form button {
+    background: #008b8b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.career-form button:hover {
+    background: #006666;
+}
+
+/* Career Result */
+
+#careerResult {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    background: #e0f7f7;
+    color: #222;
+    text-align: left;
+}
+
+/* Career Roadmap Section */
+
+.roadmap-section {
+    max-width: 750px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    color: #222;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.roadmap-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.roadmap-section p {
+    margin-bottom: 20px;
+}
+
+.roadmap-section label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.roadmap-section select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.roadmap-section button {
+    width: 100%;
+    padding: 14px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.roadmap-section button:hover {
+    background: #006666;
+}
+
+/* Roadmap Result */
+
+#roadmapResult {
+    margin-top: 25px;
+    padding: 20px;
+    background: #e0f7f7;
+    color: #222;
+    border-radius: 10px;
+    text-align: left;
+}
+
+#roadmapResult h3 {
+    color: #008b8b;
+}
+
+#roadmapResult li {
+    margin: 12px 0;
+}
+
+/* Job Search Section */
+
+.job-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.job-section h2 {
+    color: #007b83;
+    margin-bottom: 10px;
+}
+
+.job-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.job-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.job-form label {
+    font-weight: bold;
+}
+
+.job-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.job-form button {
+    padding: 12px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.job-form button:hover {
+    background: #006666;
+}
+
+#jobResults {
+    margin-top: 25px;
+    text-align: left;
+}
+
+#jobResults a {
+    display: block;
+    background: #e6f7f7;
+    color: #006666;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#jobResults a:hover {
+    background: #c9eeee;
+}
+
+/* Dark Mode */
+.dark-mode .job-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .job-section p {
+    color: #ddd;
+}
+
+.dark-mode .job-form select {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+/* User Profile Section */
+
+.profile-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.profile-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.profile-form label {
+    font-weight: bold;
+}
+
+.profile-form input,
+.profile-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.profile-form button {
+    padding: 12px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.profile-form button:hover {
+    background: #006666;
+}
+
+#profileResult {
+    margin-top: 15px;
+    color: #008b8b;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+
+.dark-mode .profile-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .profile-section p {
+    color: #ddd;
+}
+
+.dark-mode .profile-form input,
+.dark-mode .profile-form select {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+/* CV Generator Section */
+
+.cv-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.cv-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.cv-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.cv-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.cv-form label {
+    font-weight: bold;
+}
+
+.cv-form input,
+.cv-form textarea {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.cv-form textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+.cv-form button {
+    padding: 13px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cv-form button:hover {
+    background: #006666;
+}
+
+#cvResult {
+    margin-top: 15px;
+    color: #008b8b;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+
+.dark-mode .cv-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .cv-section p {
+    color: #ddd;
+}
+
+.dark-mode .cv-form input,
+.dark-mode .cv-form textarea {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+/* AI Interview Preparation Section */
+
+.interview-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.interview-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.interview-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.interview-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.interview-form label {
+    font-weight: bold;
+}
+
+.interview-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.interview-form button {
+    padding: 13px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.interview-form button:hover {
+    background: #006666;
+}
+
+#interviewResult {
+    margin-top: 25px;
+    text-align: left;
+}
+
+#interviewResult h3 {
+    color: #008b8b;
+}
+
+#interviewResult .question-card {
+    background: #e6f7f7;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+#interviewResult .question-card p {
+    color: #333;
+    margin: 8px 0;
+}
+
+/* Dark Mode */
+
+.dark-mode .interview-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .interview-section p {
+    color: #ddd;
+}
+
+.dark-mode .interview-form select {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+.dark-mode #interviewResult .question-card {
+    background: #333;
+}
+
+.dark-mode #interviewResult .question-card p {
+    color: white;
+}
+
+/* English Learning Assistant */
+
+.english-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.english-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.english-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.english-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.english-form label {
+    font-weight: bold;
+}
+
+.english-form input {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.english-form button {
+    padding: 13px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.english-form button:hover {
+    background: #006666;
+}
+
+#englishResult {
+    margin-top: 25px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+#englishResult .word-card {
+    background: #e6f7f7;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+
+.dark-mode .english-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .english-section p {
+    color: #ddd;
+}
+
+.dark-mode .english-form input {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+.dark-mode #englishResult .word-card {
+    background: #333;
+}
+
+/* AI Career Skill Assessment */
+
+.quiz-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.quiz-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.quiz-section > p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.quiz-question {
+    background: #e6f7f7;
+    padding: 18px;
+    margin: 15px 0;
+    border-radius: 10px;
+    text-align: left;
+}
+
+.quiz-question h3 {
+    color: #006666;
+    margin-bottom: 15px;
+}
+
+.quiz-question label {
+    display: block;
+    margin: 12px 0;
+    cursor: pointer;
+}
+
+.quiz-question input {
+    margin-right: 8px;
+}
+
+.quiz-section button {
+    padding: 13px 25px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.quiz-section button:hover {
+    background: #006666;
+}
+
+#quizResult {
+    margin-top: 20px;
+    padding: 15px;
+    font-weight: bold;
+}
+
+/* Dark Mode */
+
+.dark-mode .quiz-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .quiz-section > p {
+    color: #ddd;
+}
+
+.dark-mode .quiz-question {
+    background: #333;
+}
+
+.dark-mode .quiz-question h3 {
+    color: #70dddd;
+}
+
+/* AI Study Planner */
+
+.study-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.study-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.study-section p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.study-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    text-align: left;
+}
+
+.study-form label {
+    font-weight: bold;
+}
+
+.study-form input,
+.study-form select {
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+}
+
+.study-form button {
+    padding: 13px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.study-form button:hover {
+    background: #006666;
+}
+
+#studyResult {
+    margin-top: 25px;
+    text-align: left;
+    line-height: 1.8;
+}
+
+#studyResult .study-card {
+    background: #e6f7f7;
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 10px;
+}
+
+/* Dark Mode */
+
+.dark-mode .study-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .study-section p {
+    color: #ddd;
+}
+
+.dark-mode .study-form input,
+.dark-mode .study-form select {
+    background: #333;
+    color: white;
+    border-color: #666;
+}
+
+.dark-mode #studyResult .study-card {
+    background: #333;
+}
+
+/* AI Motivation Assistant */
+
+.motivation-section {
+    background: #ffffff;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 750px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.motivation-section h2 {
+    color: #008b8b;
+    margin-bottom: 10px;
+}
+
+.motivation-section > p {
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.motivation-card {
+    background: #e6f7f7;
+    padding: 25px;
+    border-radius: 12px;
+}
+
+.motivation-card h3 {
+    color: #006666;
+}
+
+.motivation-card p {
+    color: #444;
+}
+
+.motivation-card button {
+    padding: 13px 25px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.motivation-card button:hover {
+    background: #006666;
+}
+
+#motivationResult {
+    margin-top: 20px;
+    color: #006666;
+    font-weight: bold;
+    line-height: 1.8;
+}
+
+/* Dark Mode */
+
+.dark-mode .motivation-section {
+    background: #252525;
+    color: white;
+}
+
+.dark-mode .motivation-section > p {
+    color: #ddd;
+}
+
+.dark-mode .motivation-card {
+    background: #333;
+}
+
+.dark-mode .motivation-card h3,
+.dark-mode .motivation-card p,
+.dark-mode #motivationResult {
+    color: white;
+}
+
+/* Chat History Buttons */
+
+.chat-buttons {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 15px;
+}
+
+.clear-btn {
+    padding: 12px 20px;
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.clear-btn:hover {
+    background: #b02a37;
+}
+
+.export-btn {
+    padding: 12px 20px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.export-btn:hover {
+    background: #006666;
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 600px) {
+    .chat-buttons {
+        flex-direction: column;
+    }
+
+    .chat-buttons button {
+        width: 100%;
+    }
+}
+
+/* Feedback & Rating Section */
+
+.feedback-section {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #e0f7f4;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.feedback-section h2 {
+    text-align: center;
+    color: #008b8b;
+    margin-bottom: 15px;
+}
+
+.feedback-section p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.feedback-section label {
+    display: block;
+    margin: 12px 0 8px;
+    font-weight: bold;
+}
+
+.feedback-section select,
+.feedback-section textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.feedback-section textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.feedback-section button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #008b8b;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.feedback-section button:hover {
+    background: #006666;
+}
+
+#feedbackResult {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Admin Feedback Dashboard */
+
+.admin-section {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 25px;
+    background: #e8f0ff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.admin-section h2 {
+    text-align: center;
+    color: #2455a4;
+    margin-bottom: 20px;
+}
+
+.admin-section p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#totalFeedback {
+    color: #008b8b;
+}
+
+#adminFeedbackList {
+    margin-top: 20px;
+}
+
+.feedback-card {
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-left: 5px solid #008b8b;
+}
+
+.admin-section button {
+    padding: 12px 18px;
+    margin: 10px 5px 0 0;
+    background: #2455a4;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.admin-section button:hover {
+    background: #173c78;
+}
+
+@media (max-width: 600px) {
+    .admin-section {
+        margin: 15px;
+        padding: 18px;
+    }
+
+    .admin-section button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}
+
+/* Website Footer */
+
+.website-footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 40px;
+}
+
+.website-footer h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+}
+
+.website-footer p {
+    margin: 8px 0;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* About and Contact Pages */
+
+.profile-page {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f0fdfa;
+    color: #172554;
+}
+
+.profile-header {
+    background: #0f766e;
+    color: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.profile-header h2 {
+    margin: 0;
+}
+
+.profile-header nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.profile-header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-header nav a:hover {
+    color: #a7f3d0;
+}
+
+.about-container {
+    min-height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 15px;
+}
+
+.about-card {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    padding: 35px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.profile-icon {
+    width: 90px;
+    height: 90px;
+    background: #0f766e;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 45px;
+    font-weight: bold;
+    margin: auto;
+}
+
+.about-card h1 {
+    color: #0f766e;
+    font-size: 32px;
+}
+
+.about-card h2 {
+    font-size: 25px;
+}
+
+.about-card h3 {
+    color: #0f766e;
+}
+
+.about-card p {
+    line-height: 1.7;
+}
+
+.about-details {
+    background: #f0fdfa;
+    text-align: left;
+    padding: 15px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+
+.profile-btn {
+    display: inline-block;
+    background: #0f766e;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+.profile-btn:hover {
+    background: #115e59;
+}
+
+.contact-item {
+    background: #f0fdfa;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 10px;
+}
+
+.contact-item a {
+    color: #0f766e;
+    text-decoration: none;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+.profile-footer {
+    background: #172554;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+@media (max-width: 600px) {
+    .profile-header {
+        flex-direction: column;
+    }
+
+    .about-card {
+        padding: 20px;
+    }
+}
+
+/* Main Website Navbar */
+
+.main-navbar {
+    background: #0f766e;
+    color: white;
+    padding: 18px 25px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.main-navbar h2 {
+    margin: 0;
+}
+
+.main-navbar nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.main-navbar nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.main-navbar nav a:hover {
+    color: #a7f3d0;
+}
+
+
+
+
+
